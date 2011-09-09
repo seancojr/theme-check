@@ -41,9 +41,9 @@ function check_main( $theme ) {
 		if (file_exists( trailingslashit( WP_CONTENT_DIR . '/themes' ) . trailingslashit( basename( $theme ) ) . 'screenshot.png' ) ) {
 			$image = getimagesize( $theme . '/screenshot.png' );
 		echo '<div style="float:right" class="theme-info"><img style="max-height:180px;" src="' . trailingslashit( WP_CONTENT_URL . '/themes' ) . trailingslashit( basename( $theme ) ) . 'screenshot.png" />';
-		
+
 		echo '<br /><div style="text-align:center">' . $image[0] . 'x' . $image[1] . ' ' . round( filesize( $theme . '/screenshot.png' )/1024 ) . 'k</div></div>';
-		
+
 
 
 		}
@@ -69,7 +69,7 @@ function check_main( $theme ) {
 			}
 		 }
 		echo '</div><!-- .theme-info-->';
-		
+
 		$plugins = get_plugins( '/theme-check' );
 		$version = explode( '.', $plugins['theme-check.php']['Version'] );
 		echo '<p>Running <strong>' . $checkcount . '</strong> tests against <strong>' . $data[ 'Title' ] . '</strong> using Guidelines Version: <strong>'. $version[0] . '</strong> Plugin revision: <strong>'. $version[1] .'</strong></p>';
@@ -108,7 +108,7 @@ function tc_intro() {
 	echo '<li><a href="http://themeid.com/">Emil Uzelac</a></li>';
 	echo '</ul>';
 	_e( '<h3>Testers</h3>', 'themecheck' );
-	_e( '<p><a href="http://make.wordpress.org/themes/">The WordPress Theme Review Team</a></p>', 'themecheck' ); 
+	_e( '<p><a href="http://make.wordpress.org/themes/">The WordPress Theme Review Team</a></p>', 'themecheck' );
 }
 
 function tc_success() {
@@ -130,7 +130,7 @@ function tc_form() {
 	foreach( $themes as $name => $location ) {
 		echo '<option ';
 		if ( isset( $_POST['themename'] ) ) {
-			echo ( $location['Stylesheet'] === $_POST['themename'] ) ? 'selected="selected" ' : ''; 
+			echo ( $location['Stylesheet'] === $_POST['themename'] ) ? 'selected="selected" ' : '';
 		} else {
 			echo ( basename( STYLESHEETPATH ) === $location['Stylesheet'] ) ? 'selected="selected" ' : '';
 		}
